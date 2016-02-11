@@ -25,7 +25,7 @@ class Data:
     dim = dimension.GetDimension()
     shift = dimension.GetDimensionShift()
     scale = dimension.GetDimensionScale()
-    return (scale * np.random.random_sample( (dim,) )) + shift
+    return np.hstack([(scale * np.random.random_sample( (dim,) )) + shift, 1])
   def SetDataLabel(self, label):
     self.label_ = label
     return 0
@@ -34,5 +34,3 @@ class Data:
 ##########
 ## test ##
 ##########
-
-
