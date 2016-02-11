@@ -31,9 +31,13 @@ class Data:
     return 0
 
 class DataGenerator:
-  def __init__(self, n, dim, upper, lower, ref):
+  def __init__(self, n = 0, dim = 0, upper = 0, lower = 0, ref = 0):
     self.list_ = self.Generator(n, dim, upper, lower, ref)
     self.number_ = n if n >= 1 else 1
+  def SetList(self, data_list):
+    self.list_ = data_list
+  def SetNumber(self, number):
+    self.number_ = number
   def Generator(self, n, dim, upper, lower, ref):
     i = 0;
     dum_list = []
