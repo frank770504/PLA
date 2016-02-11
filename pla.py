@@ -47,7 +47,7 @@ class PLA:
     i = 0
     while True:
       i = i + 1
-      # stop the process when the Ein is inder the tolerance or
+      # stop the process when the Ein is under the tolerance or
       # doing over 100 times
       if self.EvaluateWeight(handle.GetDataList(), w) > tolerance or\
           i < 1000:

@@ -44,8 +44,8 @@ class DataGenerator:
       i = i + 1
     return dum_list
   def GetRandomData(self):
-   ind = np.floor(np.random.random_sample( (1,) ).item(0) * self.number_)
-   return self.list_[int(ind)]
+    ind = np.floor(np.random.random_sample( (1,) ).item(0) * self.number_)
+    return self.list_[int(ind)]
   def GetDataList(self):
     return self.list_
   #~ def GetDataBegin(self):
