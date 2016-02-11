@@ -30,7 +30,26 @@ class Data:
     self.label_ = label
     return 0
 
-
+class DataGenerator:
+  def __init__(self, n, dim, upper, lower, ref):
+    self.list_ = self.Generator(n, dim, upper, lower, ref)
+    self.number_ = n if n >= 1 else 1
+  def Generator(self, n, dim, upper, lower, ref):
+    i = 0;
+    dum_list = []
+    while i < n:
+      dum = Data(Dimension(dim, upper, lower))
+      dum.SetDataLabel(np.sign(np.dot(dum.value_, ref)))
+      dum_list.append(dum)
+      i = i + 1
+    return dum_list
+  def GetRandomData(self):
+   ind = np.floor(np.random.random_sample( (1,) ).item(0) * self.number_)
+   return self.list_[int(ind)]
+  def GetDataList(self):
+    return self.list_
+  #~ def GetDataBegin(self):
+  #~ def GetDataEnd(self):
 ##########
 ## test ##
 ##########
